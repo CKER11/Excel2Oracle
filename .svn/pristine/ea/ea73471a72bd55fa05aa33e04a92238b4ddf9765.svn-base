@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8" ?><Config  UserId = "sistest" Password = "sistest" HOST = "168.168.10.27" PORT = "1521" SERVICENAME = "orcl" />

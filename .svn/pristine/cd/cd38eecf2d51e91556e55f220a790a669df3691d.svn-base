@@ -1,0 +1,295 @@
+﻿<Window x:Class="Excel2Oracle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Excel2Oracle"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="600"
+        Width="1200"
+        Icon="Images/excel2oracle.png">
+    <Grid Margin="0"
+          x:Name="wholeGrid"
+          VerticalAlignment="Stretch"
+          HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="100"
+                              Width="25*" />
+            <ColumnDefinition MinWidth="590"
+                              Width="71*" />
+        </Grid.ColumnDefinitions>
+        <GridSplitter Width="5"
+                      Grid.Column="0"></GridSplitter>
+        <TreeView HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Grid.Column="0"
+                  Margin="0,0,10,0"
+                  BorderThickness="0"
+                  x:Name="TemplateTreeView"
+                  SelectedItemChanged="TemplateTreeView_SelectedItemChanged">
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <Setter Property="IsExpanded"
+                            Value="{Binding IsExpanded}"></Setter>
+                </Style>
+            </TreeView.ItemContainerStyle>
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate  ItemsSource="{Binding Children}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image VerticalAlignment="Center"
+                               Source="{Binding Icon}"
+                               Width="16"
+                               Height="16"
+                               Margin="0,0,2,2"></Image>
+                        <TextBlock VerticalAlignment="Center"
+                                   Name="nodeName"
+                                   Text="{Binding DisplayName}"></TextBlock>
+                        <Button VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Width="15"
+                                Height="15"
+                                Margin="20,0,0,0"
+                                Visibility="{Binding Visiblity}"
+                                Click="ReloadTemplates">
+                            <Button.Background>
+                                <ImageBrush ImageSource="Images/refesh.jpg"
+                                            Stretch="Fill" />
+                            </Button.Background >
+                        </Button>
+                        <StackPanel.ToolTip>
+                            <TextBlock VerticalAlignment="Center"
+                                       Text="{Binding Path}"
+                                       TextWrapping="Wrap"
+                                       MaxWidth="200"></TextBlock>
+                        </StackPanel.ToolTip>
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+
+        <Grid x:Name="opGrid"
+              Grid.Column="1"
+              Grid.ColumnSpan="2"
+              Margin="10,0,0,0"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="96*"></ColumnDefinition>
+                <ColumnDefinition Width="121*"></ColumnDefinition>
+                <ColumnDefinition Width="110*"></ColumnDefinition>
+                <ColumnDefinition Width="110*"></ColumnDefinition>
+                <ColumnDefinition Width="55*"></ColumnDefinition>
+                <ColumnDefinition Width="120*"></ColumnDefinition>
+                <ColumnDefinition Width="126*"></ColumnDefinition>
+                <ColumnDefinition Width="134*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblIntrduction"
+                   Content="当前模板："
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Height="26"
+                   Width="70"
+                   Margin="0,7" />
+            <Label x:Name="lblCurTemplate"
+                   Content="未选择"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Foreground="Red"
+                   MouseDoubleClick="lblCurTemplate_MouseDoubleClick"
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   Height="26"
+                   Margin="0,7"
+                  >
+                <Label.ToolTip>
+                    <ToolTip>
+                        <TextBlock  Name="tipCurTemplate"
+                                    Text="未选择">
+                        </TextBlock>
+                    </ToolTip>
+                </Label.ToolTip>
+                <Label.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Name="openTemplateFile"
+                                  Header="打开模板文件"
+                                  Click="openTemplateFile_Click"></MenuItem>
+                        <MenuItem Name="openTemplatePath"
+                                  Header="打开模板文件目录"
+                                  Click="openTemplatePath_Click"></MenuItem>
+                    </ContextMenu>
+                </Label.ContextMenu>
+            </Label>
+            <Button x:Name="btnAnalysis"
+                    Content="解析规则"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Grid.Row="0"
+                    Grid.Column="5"
+                    Width="70"
+                    Click="AnalysisFile"
+                    Height="22"
+                    Margin="8,9,0,9" />
+            <Label x:Name="lblIntrduction_Copy"
+                   Content="当前规则："
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Grid.Row="0"
+                   Grid.Column="2"
+                   Height="26"
+                   Width="70"
+                   Margin="0,7" />
+            <Label x:Name="lblCurRule"
+                   Content="未解析"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Foreground="Red"
+                   Grid.Row="0"
+                   Grid.Column="3"
+                   Height="26"
+                   Margin="0,7"
+                   >
+                <Label.ToolTip>
+                    <ToolTip>
+                        <TextBlock  Name="tipCurRule"
+                                    Text="未解析">
+                        </TextBlock>
+                    </ToolTip>
+                </Label.ToolTip>
+            </Label>
+            <Button x:Name="btnAnalysisView"
+                    Content="查看规则"
+                    Grid.Row="0"
+                    Grid.Column="6"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Width="70"
+                    Click="ViewRules"
+                    Height="22"
+                    Margin="8,9,0,9" />
+
+            <Label x:Name="lblFileSelect"
+                   Content="当前文件："
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Height="26"
+                   Width="70"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Margin="0,7" />
+            <TextBox x:Name="txtFilePath"
+                     TextChanged="txtFilePath_TextChanged"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Stretch"
+                     TextWrapping="NoWrap"
+                     Text=""
+                     MouseDoubleClick="txtFilePath_MouseDoubleClick"
+                     Grid.Row="1"
+                     Grid.Column="1"
+                     Grid.ColumnSpan="3"
+                     BorderThickness="1"
+                     Margin="0,8">
+                <TextBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Name="openImportFile"
+                                  Header="打开导入文件"
+                                  Click="openImportFile_Click"></MenuItem>
+                        <MenuItem Name="openImportPath"
+                                  Header="打开导入文件目录"
+                                  Click="openImportPath_Click"></MenuItem>
+                    </ContextMenu>
+                </TextBox.ContextMenu>
+            </TextBox>
+            <Button x:Name="btnSelectFile"
+                    Content="..."
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Grid.Row="1"
+                    Grid.Column="4"
+                    BorderThickness="0"
+                    Click="SelectImportedFile"
+                    Width="25"
+                    Height="20"
+                    Margin="8,10,0,10" />
+
+            <Button x:Name="btnGetDate"
+                    Content="提取数据"
+                    HorizontalAlignment="Left"
+                    Grid.Row="1"
+                    Grid.Column="5"
+                    VerticalAlignment="Center"
+                    Width="70"
+                    Click="GetData"
+                    Height="22"
+                    Margin="8,9,0,9" />
+
+            <Button x:Name="btnImport"
+                    Content="导入数据"
+                    Grid.Row="1"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Width="70"
+                    Click="Import"
+                    Height="22"
+                    Grid.Column="6"
+                    Margin="8,9,0,9" />
+            <TextBox x:Name="txtViewTip"
+                     Grid.Row="2"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="8"
+                     HorizontalAlignment="Stretch"
+                     TextWrapping="Wrap"
+                     Text="此处显示提取到的数据"
+                     VerticalAlignment="Stretch"
+                     VerticalScrollBarVisibility="Visible"
+                     Panel.ZIndex="99" />
+            <ScrollViewer Name="viewScroll"
+                          Grid.Row="2"
+                          Grid.Column="0"
+                          Grid.ColumnSpan="8"
+                          VerticalAlignment="Stretch"
+                          HorizontalAlignment="Stretch"
+                          BorderThickness="1">
+                <StackPanel Name="spView"
+                            VerticalAlignment="Stretch"
+                            HorizontalAlignment="Stretch">
+                </StackPanel>
+            </ScrollViewer>
+            <TextBox x:Name="txtProcess"
+                     Grid.Row="3"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="4"
+                     HorizontalAlignment="Stretch"
+                     TextWrapping="Wrap"
+                     Text="此处显示解析和提取数据进度"
+                     VerticalAlignment="Stretch"
+                     VerticalScrollBarVisibility="Visible" />
+            <TextBox x:Name="txtImportProcess"
+                     Grid.Row="3"
+                     Grid.Column="4"
+                     Grid.ColumnSpan="4"
+                     HorizontalAlignment="Stretch"
+                     TextWrapping="Wrap"
+                     Text="此处显示导入进度"
+                     VerticalAlignment="Stretch"
+                     VerticalScrollBarVisibility="Visible" />
+            <Button Content="oracle配置"
+                    Grid.Column="7"
+                    HorizontalAlignment="Right"
+                    Margin="0,10,10,0"
+                    VerticalAlignment="Top"
+                    Width="74"
+                    Click="OrclConfig_Click"
+                    Height="22" />
+        </Grid>
+
+    </Grid>
+</Window>

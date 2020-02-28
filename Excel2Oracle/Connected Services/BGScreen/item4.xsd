@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Data" nillable="true" type="Data" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfData" nillable="true" type="ArrayOfData" />
+  <xs:complexType name="Data">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Data" nillable="true" type="Data" />
+  <xs:complexType name="ArrayOfTagNameData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TagNameData" nillable="true" type="TagNameData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTagNameData" nillable="true" type="ArrayOfTagNameData" />
+  <xs:complexType name="TagNameData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TagNameData" nillable="true" type="TagNameData" />
+</xs:schema>

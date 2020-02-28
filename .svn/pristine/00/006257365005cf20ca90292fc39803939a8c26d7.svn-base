@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ExcelHelper
+{
+    public partial class  AnalysisHelper
+    {
+        public static void Analysis(string templateFilePath, ProcessReport report, ProcessReportClear reportClear)
+        {
+            reportClear();
+            report("开始读取文件");
+            ExcelHelper excelHelper = new ExcelHelper(templateFilePath);
+            report("开始读取所有配置");
+            Dictionary<string,string> AllContent  = excelHelper.ReadAllContentText();
+            
+            report("1");
+        }
+    }
+}

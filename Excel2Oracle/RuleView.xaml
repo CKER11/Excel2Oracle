@@ -1,0 +1,59 @@
+﻿<Window x:Class="Excel2Oracle.RuleView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Excel2Oracle"
+        mc:Ignorable="d"
+        Title="当前规则"
+        Height="258.583"
+        Width="521.424"
+        Icon="Images/excel2oracle.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListView HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Name="lvResultView"
+                  Grid.Row="0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="序号"
+                                    DisplayMemberBinding="{Binding
+                    序号}"></GridViewColumn>
+                    <GridViewColumn Header="数据源表名"
+                                    DisplayMemberBinding="{Binding
+                    数据源表名}"></GridViewColumn>
+                    <GridViewColumn Header="Oracle表名"
+                                    DisplayMemberBinding="{Binding
+                    Oracle表名}"></GridViewColumn>
+                    <GridViewColumn Header="主键"
+                                    DisplayMemberBinding="{Binding
+                   主键}"></GridViewColumn>
+                    <GridViewColumn Header="读取类型"
+                                    DisplayMemberBinding="{Binding
+                    读取类型}"></GridViewColumn>
+                    <GridViewColumn Header="开始读取单元格"
+                                    DisplayMemberBinding="{Binding
+                    开始读取单元格}"></GridViewColumn>
+                    <GridViewColumn Header="停止读取类型"
+                                    DisplayMemberBinding="{Binding
+                    停止读取类型}"></GridViewColumn>
+                    <GridViewColumn Header="列数量"
+                                    DisplayMemberBinding="{Binding
+                    列数量}"></GridViewColumn>
+                    <GridViewColumn Header="列名"
+                                    DisplayMemberBinding="{Binding
+                    列名}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Name="lblRulesIntroduction"
+                   Grid.Row="1"
+                   VerticalAlignment="Stretch"
+                   HorizontalAlignment="Stretch" 
+                   />
+    </Grid>
+</Window>

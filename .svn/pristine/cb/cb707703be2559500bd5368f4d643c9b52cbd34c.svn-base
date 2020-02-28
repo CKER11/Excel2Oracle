@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BusinessService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:20080/BigScreen/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:20080/BigScreen/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:20080/BigScreen/?xsd=xsd2" namespace="http://schemas.microsoft.com/Message" />
+      <xsd:import schemaLocation="http://localhost:20080/BigScreen/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BigScreen.Service" />
+      <xsd:import schemaLocation="http://localhost:20080/BigScreen/?xsd=xsd4" />
+      <xsd:import schemaLocation="http://localhost:20080/BigScreen/?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBusinessService_Test_InputMessage">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_Test_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetCurveValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurveValues" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetCurveValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurveValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoSelectMethod_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoSelectMethod" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoSelectMethod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoSelectMethodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoSelectMethodRetTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoSelectMethodRetTable" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoSelectMethodRetTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoSelectMethodRetTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoSelectMethod2_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoSelectMethod2" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoSelectMethod2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoSelectMethod2Response" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetTagValuesWithJsonEx_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTagValuesWithJsonEx" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetTagValuesWithJsonEx_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTagValuesWithJsonExResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_OperateSql_InputMessage">
+    <wsdl:part name="parameters" element="tns:OperateSql" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_OperateSql_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OperateSqlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoSelectMethodWithHeader_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoSelectMethodWithHeader" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoSelectMethodWithHeader_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoSelectMethodWithHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetPeriodHisValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeriodHisValues" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetPeriodHisValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeriodHisValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoSelectSqlByKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoSelectSqlByKey" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoSelectSqlByKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoSelectSqlByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoSelectSqlByKey2_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoSelectSqlByKey2" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoSelectSqlByKey2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoSelectSqlByKey2Response" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetTagValuesWithJsonEx2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTagValuesWithJsonEx2" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetTagValuesWithJsonEx2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTagValuesWithJsonEx2Response" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_MakeXLSFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:MakeXLSFile" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_MakeXLSFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MakeXLSFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoSelectMethodByParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoSelectMethodByParams" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoSelectMethodByParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoSelectMethodByParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoDeleteMethodByParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoDeleteMethodByParams" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoDeleteMethodByParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoDeleteMethodByParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoUpdateMethodByParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoUpdateMethodByParams" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoUpdateMethodByParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoUpdateMethodByParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoAddMethodByParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoAddMethodByParams" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoAddMethodByParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoAddMethodByParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoAddNormalByParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoAddNormalByParams" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_DoAddNormalByParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoAddNormalByParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetSISXML_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSISXML" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetSISXML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSISXMLResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBusinessService">
+    <wsdl:operation name="Test">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/Test" message="tns:IBusinessService_Test_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/TestResponse" message="tns:IBusinessService_Test_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurveValues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetCurveValues" message="tns:IBusinessService_GetCurveValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetCurveValuesResponse" message="tns:IBusinessService_GetCurveValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoSelectMethod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/DoSelectMethod" message="tns:IBusinessService_DoSelectMethod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/DoSelectMethodResponse" message="tns:IBusinessService_DoSelectMethod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoSelectMethodRetTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/DoSelectMethodRetTable" message="tns:IBusinessService_DoSelectMethodRetTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/DoSelectMethodRetTableResponse" message="tns:IBusinessService_DoSelectMethodRetTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoSelectMethod2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/DoSelectMethod2" message="tns:IBusinessService_DoSelectMethod2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/DoSelectMethod2Response" message="tns:IBusinessService_DoSelectMethod2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTagValuesWithJsonEx">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetTagValuesWithJsonEx" message="tns:IBusinessService_GetTagValuesWithJsonEx_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetTagValuesWithJsonExResponse" message="tns:IBusinessService_GetTagValuesWithJsonEx_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OperateSql">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/OperateSql" message="tns:IBusinessService_OperateSql_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/OperateSqlResponse" message="tns:IBusinessService_OperateSql_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoSelectMethodWithHeader">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/DoSelectMethodWithHeader" message="tns:IBusinessService_DoSelectMethodWithHeader_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/DoSelectMethodWithHeaderResponse" message="tns:IBusinessService_DoSelectMethodWithHeader_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPeriodHisValues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetPeriodHisValues" message="tns:IBusinessService_GetPeriodHisValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetPeriodHisValuesResponse" message="tns:IBusinessService_GetPeriodHisValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoSelectSqlByKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/DoSelectSqlByKey" message="tns:IBusinessService_DoSelectSqlByKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/DoSelectSqlByKeyResponse" message="tns:IBusinessService_DoSelectSqlByKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoSelectSqlByKey2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/DoSelectSqlByKey2" message="tns:IBusinessService_DoSelectSqlByKey2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/DoSelectSqlByKey2Response" message="tns:IBusinessService_DoSelectSqlByKey2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTagValuesWithJsonEx2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetTagValuesWithJsonEx2" message="tns:IBusinessService_GetTagValuesWithJsonEx2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetTagValuesWithJsonEx2Response" message="tns:IBusinessService_GetTagValuesWithJsonEx2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeXLSFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/MakeXLSFile" message="tns:IBusinessService_MakeXLSFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/MakeXLSFileResponse" message="tns:IBusinessService_MakeXLSFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoSelectMethodByParams">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/DoSelectMethodByParams" message="tns:IBusinessService_DoSelectMethodByParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/DoSelectMethodByParamsResponse" message="tns:IBusinessService_DoSelectMethodByParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoDeleteMethodByParams">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/DoDeleteMethodByParams" message="tns:IBusinessService_DoDeleteMethodByParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/DoDeleteMethodByParamsResponse" message="tns:IBusinessService_DoDeleteMethodByParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoUpdateMethodByParams">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/DoUpdateMethodByParams" message="tns:IBusinessService_DoUpdateMethodByParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/DoUpdateMethodByParamsResponse" message="tns:IBusinessService_DoUpdateMethodByParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoAddMethodByParams">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/DoAddMethodByParams" message="tns:IBusinessService_DoAddMethodByParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/DoAddMethodByParamsResponse" message="tns:IBusinessService_DoAddMethodByParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoAddNormalByParams">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/DoAddNormalByParams" message="tns:IBusinessService_DoAddNormalByParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/DoAddNormalByParamsResponse" message="tns:IBusinessService_DoAddNormalByParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSISXML">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetSISXML" message="tns:IBusinessService_GetSISXML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetSISXMLResponse" message="tns:IBusinessService_GetSISXML_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBusinessService" type="tns:IBusinessService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Test">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurveValues">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetCurveValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoSelectMethod">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/DoSelectMethod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoSelectMethodRetTable">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/DoSelectMethodRetTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoSelectMethod2">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/DoSelectMethod2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTagValuesWithJsonEx">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetTagValuesWithJsonEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OperateSql">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/OperateSql" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoSelectMethodWithHeader">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/DoSelectMethodWithHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeriodHisValues">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetPeriodHisValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoSelectSqlByKey">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/DoSelectSqlByKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoSelectSqlByKey2">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/DoSelectSqlByKey2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTagValuesWithJsonEx2">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetTagValuesWithJsonEx2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeXLSFile">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/MakeXLSFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoSelectMethodByParams">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/DoSelectMethodByParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoDeleteMethodByParams">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/DoDeleteMethodByParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoUpdateMethodByParams">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/DoUpdateMethodByParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoAddMethodByParams">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/DoAddMethodByParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoAddNormalByParams">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/DoAddNormalByParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSISXML">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetSISXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BusinessService">
+    <wsdl:port name="BasicHttpBinding_IBusinessService" binding="tns:BasicHttpBinding_IBusinessService">
+      <soap:address location="http://localhost:20080/BigScreen/BusinessService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

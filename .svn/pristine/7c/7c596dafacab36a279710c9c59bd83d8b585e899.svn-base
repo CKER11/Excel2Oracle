@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8a22ffad-c0c8-4b7f-b367-e45a25113b4b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:20080/BigScreen/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="83592662-1220-42f8-9f09-6c7a24d5eb93" SourceId="1" SourceUrl="http://localhost:20080/BigScreen/?xsd=xsd3" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="11d658ca-10e8-4db6-b688-ce5fcb71c5df" SourceId="1" SourceUrl="http://localhost:20080/BigScreen/?xsd=xsd2" />
+    <MetadataFile FileName="BusinessService.wsdl" MetadataType="Wsdl" ID="7f1b9b76-c765-4ce6-967e-02b787db3433" SourceId="1" SourceUrl="http://localhost:20080/BigScreen/?wsdl" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="b9592c54-b3b5-4309-96ab-e2dcb5d1e277" SourceId="1" SourceUrl="http://localhost:20080/BigScreen/?xsd=xsd5" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="699e4eae-d191-42c9-85cc-e2f4b3cd12f9" SourceId="1" SourceUrl="http://localhost:20080/BigScreen/?xsd=xsd0" />
+    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="a3dc833e-6457-4fb3-bb38-e15382e3c967" SourceId="1" SourceUrl="http://localhost:20080/BigScreen/?xsd=xsd4" />
+    <MetadataFile FileName="item5.xsd" MetadataType="Schema" ID="c555283e-f75c-4e1d-bc2b-305375cab7a8" SourceId="1" SourceUrl="http://localhost:20080/BigScreen/?xsd=xsd1" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="ac70b937-a2fe-4a0b-830a-c50662d7922a" SourceId="1" SourceUrl="http://localhost:20080/BigScreen/?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

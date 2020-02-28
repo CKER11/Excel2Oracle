@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <system.serviceModel>
+    <serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true" />
+    <bindings>
+      <basicHttpBinding>
+        <binding name="BasicHttpBinding_IBusinessService" />
+      </basicHttpBinding>
+    </bindings>
+    <client>
+      <endpoint address="http://localhost:20080/BigScreen/BusinessService"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IBusinessService"
+        contract="BGScreen.IBusinessService" name="BasicHttpBinding_IBusinessService" />
+    </client>
+  </system.serviceModel>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="ICSharpCode.SharpZipLib" publicKeyToken="1b03e6acf1164f73" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.84.0.0" newVersion="4.84.0.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+</configuration>
